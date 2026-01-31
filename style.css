@@ -17,7 +17,6 @@ html{
 
 main{
     width: 100%;
-
 }
 
 main section{
@@ -35,22 +34,51 @@ main section{
     font-size: var(--font-sm);
     cursor: pointer;
     color: var(--text-active-color);
-    background-color: var(--bg-active-color);
+    background-color: var(--bg-active-color);   
+    font-weight: 600;
+}
+
+.Presets .btn.active{
+    background-color: var(--bg-presetselect-color);
+    color: var(--text-primary-color);
+    box-shadow: 0 0 12px rgba(0,0,0,0.35);
+    transform: scale(1.05);
+}
+
+.btn:hover{
+    background-color: var(--hover-primary-color);
+    transform: all 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #reset-btn{
-    background-color: var(--bg-danger-color);   
+    background-color: var(--bg-danger-color);  
+    font-weight: 600; 
+    color: var(--text-primary-color);
+}
+
+#reset-btn:hover{
+    background-color: var(--hover-reset-color);
+    transform: all 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 #download-btn{
     background-color: var(--bg-success-color);
+    font-weight: 600;
+    color: var(--text-primary-color);
+}
+
+#download-btn:hover{
+    background-color: var(--hover-download-color);
+    transform: all 0.2s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 main section .left{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: aquamarine; */
     gap: var(--gutter-lg);
     width: 70%;
 }
@@ -62,10 +90,9 @@ main section .top{
 }
 
 main section .bottom{
-    /* background-color: rgb(61, 53, 53); */
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Blurs whatever is BEHIND this div */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
     padding: var(--padding-2xl);
@@ -87,13 +114,12 @@ main section .bottom .placeholder i{
     font-size: 10rem;
 }
 
-
 main section .right{
     width: 30%;
     color: var(--text-primary-color);
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-    backdrop-filter: blur(10px); /* Blurs whatever is BEHIND this div */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-xl);
     padding: var(--padding-lg);
@@ -114,32 +140,60 @@ main section .right .filter{
 
 main section .right .filter input{
     width: 100%;
-    cursor: pointer;
-    outline: none;
-    margin-top: var(--margin-sm);
     appearance: none;
+    height: 4px;
+    border-radius: 6px;
+    background:#ff6b6b;
+    outline: none;
+    cursor: pointer;
 }
 
 main section .right .filter input::-webkit-slider-runnable-track{
-    background-color: var(--bg-active-color);
-    height: 3px;
-    border-radius: var(--border-radius-sm);
-
+    height: 4px;
+    border-radius: 6px;
 }
 
 main section .right .filter input::-webkit-slider-thumb{
-    cursor: pointer;
-    background-color: rgb(119, 31, 31);
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    margin-top: -8.5px;
+    background: #ff6b6b;
+    margin-top: -6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
+main section .right .filter input::-webkit-slider-thumb:hover{
+    transform: scale(1.15);
+}
 
 canvas{
-    /* background-color: red; */
     max-width: 90%;
     max-height: 80vh;
+    display: none;
 }
+
+.Presets{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter-sm);
+}
+
+.wrapper{
+    cursor: not-allowed;
+}
+
+.btn:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.filters.disabled,
+.Presets.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+

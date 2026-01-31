@@ -3,8 +3,9 @@
     --bg-primary-color: rgb(17,17,17);    
     --bg-secondary-color: rgb(34,34,34);
     --bg-active-color: rgb(233,233,233);
-    --bg-danger-color: rgb(200,50,50);
+    --bg-danger-color: #ff4757;
     --bg-success-color: rgb(30,167,30);
+    --bg-presetselect-color:  #ff6b6b;
 
     /* text colours */
     --text-primary-color: rgb(233,233,233);
@@ -12,8 +13,13 @@
     --text-ternary-color: rgb(150,150,150);
     --text-active-color: rgb(24,24,24);
 
+    /* hover colours */
+    --hover-primary-color: rgb(201, 200, 200);
+    --hover-reset-color: rgba(200, 50, 50, 0.863);
+    --hover-download-color: rgba(30, 167, 30, 0.76);
+
+
     /*paddings  1rem = 16px*/
-    
     --padding-sm: 0.5rem;
     --padding-md: 1px;
     --padding-lg: 1.5rem;
